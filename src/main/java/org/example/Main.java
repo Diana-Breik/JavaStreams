@@ -10,7 +10,7 @@ public class Main {
 
         System.out.println("Even numbers in List");
         //Schritt 1: Filtert eine Liste von Zahlen und gebt nur die geraden Zahlen aus.
-        List<Integer> integerList = new ArrayList<>(List.of(0,1,2,3,99,5,6,7,1,9,10));
+        List<Integer> integerList = new ArrayList<>(List.of(0,1,100,7,1,9,10));
         integerList.stream()
                 .filter(number -> number % 2 == 0)
                 .forEach(System.out::println);
@@ -31,5 +31,13 @@ public class Main {
                 .forEach(System.out::println);
 
         System.out.println("-------------------------");
+        //Schritt 4:Führt eine reduce'-Operation durch,um die Summe aller Zahlen in der Liste zu berechnen.
+        int sum = integerList.stream()
+                .reduce(0, (a,b) -> a+b);
+        System.out.println("the sum of all numbers in the list is: " + sum);
+
+        System.out.println("-------------------------");
+
+
     }
 }
