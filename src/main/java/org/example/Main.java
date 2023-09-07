@@ -31,12 +31,22 @@ public class Main {
                 .forEach(System.out::println);
 
         System.out.println("-------------------------");
+        //Schritt 5: Nutzt 'forEach' und gebt jede verarbeitete Zahl aus.
+        System.out.println("Print the ordered list of even and double numbers");
+        integerList.stream()
+                .filter(number -> number % 2 == 0) //0,100,10
+                .map(number -> number * 2)//0,200,20
+                .sorted()//0,20,200
+                .forEach(System.out::println);
+
+        System.out.println("-------------------------");
         //Schritt 4:Führt eine reduce'-Operation durch,um die Summe aller Zahlen in der Liste zu berechnen.
         int sum = integerList.stream()
                 .reduce(0, (a,b) -> a+b);
         System.out.println("the sum of all numbers in the list is: " + sum);
 
         System.out.println("-------------------------");
+
 
 
     }
